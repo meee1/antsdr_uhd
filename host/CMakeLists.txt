@@ -40,10 +40,6 @@ set(RUAMEL.YAML_MIN_VERSION "0.15")
 set(PY_MAKO_MIN_VERSION "0.4.2")
 set(PY_REQUESTS_MIN_VERSION "2.0")
 
-set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
-set(BUILD_SHARED_LIBS OFF)
-set(CMAKE_EXE_LINKER_FLAGS "-static")
-
 ########################################################################
 # Check Compiler Version
 ########################################################################
@@ -93,7 +89,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" AND ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
     set(CMAKE_EXE_LINKER_FLAGS "-lthr ${CMAKE_EXE_LINKER_FLAGS}")
-    set(CMAKE_CXX_FLAGS "-stdlib=libc++ ${CMAKE_CXX_FLAGS} -fPIE ")
+    set(CMAKE_CXX_FLAGS "-stdlib=libc++ ${CMAKE_CXX_FLAGS} ")
 endif()
 
 ########################################################################
@@ -181,7 +177,7 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 ########################################################################
 # Static Lib Configuration
 ########################################################################
-option(ENABLE_STATIC_LIBS "Enable building of static libraries" OFF)
+option(ENABLE_STATIC_LIBS "Enable building of static libraries" ON)
 if(ENABLE_STATIC_LIBS)
     message(STATUS "Building Static Libraries: ${ENABLE_STATIC_LIBS}")
 endif(ENABLE_STATIC_LIBS)
