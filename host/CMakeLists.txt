@@ -179,7 +179,7 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 ########################################################################
 # Static Lib Configuration
 ########################################################################
-option(ENABLE_STATIC_LIBS "Enable building of static libraries" OFF)
+option(ENABLE_STATIC_LIBS "Enable building of static libraries" ON)
 if(ENABLE_STATIC_LIBS)
     message(STATUS "Building Static Libraries: ${ENABLE_STATIC_LIBS}")
 endif(ENABLE_STATIC_LIBS)
