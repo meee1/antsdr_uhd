@@ -29,8 +29,8 @@ jobs:
         sudo apt-get install dfu-util u-boot-tools device-tree-compiler mtools
         sudo apt-get install bc python cpio zip unzip rsync file wget 
         sudo apt-get install libtinfo5 device-tree-compiler bison flex u-boot-tools
-        sudo apt-get purge gcc-arm-linux-gnueabihf
-        sudo apt-get remove libfdt-de
+        #sudo apt-get purge gcc-arm-linux-gnueabihf
+        sudo apt-get remove libfdt-de || true
 
         export CROSS_COMPILE=arm-linux-gnueabihf- 
 
